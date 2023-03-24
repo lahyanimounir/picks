@@ -1,17 +1,165 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar color="tertiary">
+        <ion-title>Menu Content</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">This is the menu content.</ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title color="primary">Hicham H</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-no-padding">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <div class="ion-padding-start ion-padding-end">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+        <div class="ion-text-center">
+
+          <div class="triangle"></div>
+
+          <svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg"
+            version="1.1">
+            <defs>
+              <filter id="round">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+                  result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+
+        <h3 class="ion-text-center mb-0">hicham H</h3>
+        <p class="ion-text-center color-medium">72 my picks <span>.</span> 65 pockers</p>
+        <p class="ion-text-center color-medium"><ion-icon name="location-sharp"></ion-icon>casablanca</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ipsa.</p>
+        <p>Interests</p>
+
+        <ion-segment scrollable class="segments" [(ngModel)]="segments">
+          <ion-segment-button value="Hotels" class="ion-no-padding">
+            <ion-chip [color]="segments != 'Hotels' ? 'medium' : ''" class="b-radius-5">Hotels</ion-chip>
+          </ion-segment-button>
+          <ion-segment-button value="Airbnb" class="ion-no-padding">
+            <ion-chip [color]="segments != 'Airbnb' ? 'medium' : ''" class="b-radius-5">Airbnb</ion-chip>
+          </ion-segment-button>
+          <ion-segment-button value="Sea" class="ion-no-padding">
+            <ion-chip [color]="segments != 'Sea' ? 'medium' : ''" class="b-radius-5">Sea</ion-chip>
+          </ion-segment-button>
+          <ion-segment-button value="Restaurants" class="ion-no-padding">
+            <ion-chip [color]="segments != 'Restaurants' ? 'medium' : ''" class="b-radius-5">Restaurants</ion-chip>
+          </ion-segment-button>
+          <ion-segment-button value="Spa" class="ion-no-padding">
+            <ion-chip [color]="segments != 'Spa' ? 'medium' : ''" class="b-radius-5">Spa</ion-chip>
+          </ion-segment-button>
+          <ion-segment-button  value="Misuam" class="ion-no-padding">
+
+            <ion-chip [color]="segments != 'Misuam' ? 'medium' : ''" class="b-radius-5">Misuam</ion-chip>
+
+          </ion-segment-button>
+        </ion-segment>
+
+
+        <ion-row>
+          <ion-col size="6" class="pl-0">
+            <ion-button expand="block" style="--box-shadow:none">Default</ion-button>
+          </ion-col>
+          <ion-col size="6" class="pr-0">
+            <ion-button expand="block" color="primary" fill="outline" style="--box-shadow:none">Outline</ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <div>
+          <ion-segment [(ngModel)]="choice">
+            <ion-segment-button value="Ongoing" class="ion-no-padding w-50">
+              <ion-label >Ongoing Picks</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="Closed" class="ion-no-padding w-50">
+              <ion-label >Closed Picks</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+      </div>
+
+      <div class="mt-2">
+        <ion-row>
+          <ion-col size="6" class="ion-no-padding border-right" style="background: yellow;height: 15px;">
+            <ion-row>
+              <ion-col size="6"  
+                       [style.height.px]="halfWidth / 2"
+                       style="background: url('https://picsum.photos/id/11/500/500');background-position: center;background-size: cover;" 
+                       class="ion-no-padding border-right">
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding border-left"
+                      [style.height.px]="halfWidth / 2"
+                      style="background: url('https://picsum.photos/id/10/500/500');background-position: center;background-size: cover;" 
+              ></ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="6"  
+                       [style.height.px]="halfWidth / 2"
+                       style="background: url('https://picsum.photos/id/4/500/500');background-position: center;background-size: cover;" 
+                       class="ion-no-padding border-right  border-top" >
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding border-left border-top"
+                      [style.height.px]="halfWidth / 2"
+                      style="background: url('https://picsum.photos/id/7/500/500');background-position: center;background-size: cover;" 
+              ></ion-col>
+            </ion-row>
+           
+          </ion-col>
+          <ion-col size="6" class="ion-no-padding border-left " 
+                            [style.height.px]="halfWidth"
+                          style="background: url('https://picsum.photos/id/13/500/500');
+                          background-position: center;background-size: cover;">
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div class="mt-2">
+        <ion-row>
+          <ion-col size="6" class="ion-no-padding border-right" style="background: yellow;height: 15px;">
+            <ion-row>
+              <ion-col size="6"  
+                       [style.height.px]="halfWidth / 2"
+                       style="background: url('https://picsum.photos/id/15/500/500');background-position: center;background-size: cover;" 
+                       class="ion-no-padding border-right">
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding border-left"
+                      [style.height.px]="halfWidth / 2"
+                      style="background: url('https://picsum.photos/id/6/500/500');background-position: center;background-size: cover;" 
+              ></ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="6"  
+                       [style.height.px]="halfWidth / 2"
+                       style="background: url('https://picsum.photos/id/12/500/500');background-position: center;background-size: cover;" 
+                       class="ion-no-padding border-right  border-top" >
+              </ion-col>
+              <ion-col size="6" class="ion-no-padding border-left border-top"
+                      [style.height.px]="halfWidth / 2"
+                      style="background: url('https://picsum.photos/id/10/500/500');background-position: center;background-size: cover;" 
+              ></ion-col>
+            </ion-row>
+           
+          </ion-col>
+          <ion-col size="6" class="ion-no-padding border-left " 
+                            [style.height.px]="halfWidth"
+                          style="background: url('https://picsum.photos/id/12/500/500');
+                          background-position: center;background-size: cover;">
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-content>
+  </div>
+</ion-app>
